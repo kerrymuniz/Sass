@@ -1,0 +1,103 @@
+/* Mixin, Herança e diretivas de controle */
+    
+//Mixin
+@mixin titulo($cor, $cor-bg) {
+    color: $cor;
+    background: $cor-bg;
+    padding: 10px 5px;
+}
+
+h1 {
+    @include titulo(white, black);
+}
+
+h2 {
+    @include titulo(yellow, green);
+}
+
+
+//Herança 
+/* Múltiplas diretivas */
+.classe1 {
+    color: red;
+}
+.classe2 {
+    background: black;
+}
+
+.vermelho { //essa classe está extendendo as outras duas;
+    @extend.classe1;
+    @extend.classe2;
+}
+
+
+/* Encadeamento de diretivas */
+.pai {
+    color: red;
+}
+.filho {
+    @extend .pai;
+    background: black;
+}
+
+.erro {
+    @extend .filho;
+    padding: 10px;
+    border: 1px solid red;
+}
+
+
+
+/* Placeholders(%) */
+%pai {
+    color: red;
+}
+%filho {
+    @extend %pai;
+    background: black;
+}
+
+.erro {
+    @extend %filho;
+    padding: 10px;
+    border: 1px solid red;
+}
+
+
+
+//Diretivas de controle
+$cor: red;
+@if($cor == green){
+    p{
+        color: $cor;
+    }
+}@else if($cor == red){
+    p{
+        color: $cor;
+    }
+}@else{
+    p{
+        color: black;
+    }
+}
+
+/* diretivas de controle e mixins */
+@mixin tema($tema: padrao) {
+    @if($tema == natal){
+        background: red;
+        color: white;
+        padding: 10px;
+    }@else if($tema == blackfriday){
+        background: black;
+        color: white;
+        padding: 10px;
+    }@else{
+        background: white;
+        color: gray;
+        padding: 10px;
+    }
+}
+
+p{
+    @include tema(blackfriday);
+}

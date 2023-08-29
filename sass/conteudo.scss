@@ -1,0 +1,115 @@
+/* Aninhamento */
+/* Referenciando seletor pai */
+#conteudo {
+    background: green;
+    padding: 15px;
+  
+      h1, h2 {
+        color: black;
+      }
+      
+      a {
+        color: red;
+        &:hover {
+          color: yellow;
+          }
+      }
+      
+  }
+  
+  /* Variáveis */
+  $cor-primaria: blue;
+  $tamanho-titulo: 20px;
+  
+  h2 {
+      color: $cor-primaria;
+  }
+  
+  h3 {
+      color: $cor-primaria;
+  }
+  
+  /* Escopo Variáveis
+  (onde variável é reconhecida)
+  */
+  $cor-padrao: red;
+  #rodape {
+      $cor-padrao: green !global; //tornando a cor que está no escopo global
+      background-color: $cor-padrao;
+  }
+  
+  h2 {
+      color: $cor-padrao;
+  }
+  
+  /* Interpolação */
+  $classe: red;
+  $color: color;
+  
+  .red {
+      //color: $classe;
+      #{$color}: $classe;
+  }
+
+//------------------------------------------------------------------------------------------
+
+/* for, while, each, funções e importações */
+
+/* for */
+/* through e to */
+@for $i from 1 through 3 {
+    .item-#{$i} {
+        background: green;
+        margin-bottom: 2px;
+    }
+}
+
+/* while */
+$contador: 1;
+@while ($contador < 5) {
+    .item-#{$contador} {
+        background: orange;
+        margin-bottom: 2px;
+    }
+    
+    $contador: $contador + 1;
+}
+  
+  /* each */
+  $lista: green, yellow, red;
+  $contador: 1;
+  
+  @each $cor in $lista {
+      .item-#{$contador} {
+          background: $cor;
+          margin-bottom: 2px;
+      }
+      
+      $contador: $contador + 1;
+  }
+  
+  
+  
+  /* Funções */
+  $total: 12;
+  @function largura-coluna($coluna){
+      
+      @return percentage($coluna/$total);
+      
+  }
+  
+  $resultado: largura-coluna(12);
+  /*
+  #{$resultado}
+  */
+
+/*
+Outras funções:
+mix(green,orange,10%)
+darken(green,10%)
+lighten(green, 10%)
+*/
+.alerta {
+    background: lighten(green, 10%);
+    color: yellow;
+}

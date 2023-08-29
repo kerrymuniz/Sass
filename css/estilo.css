@@ -1,103 +1,20 @@
 @charset "UTF-8";
-/* Aninhamento */
-/* Referenciando seletor pai */
-#conteudo {
-  background: green;
-  padding: 15px;
-}
-#conteudo h1, #conteudo h2 {
-  color: black;
-}
-#conteudo a {
-  color: red;
-}
-#conteudo a:hover {
-  color: yellow;
-}
-
-/* Variáveis */
-h2 {
-  color: blue;
-}
-
-h3 {
-  color: blue;
-}
-
-/* Escopo Variáveis
-(onde variável é reconhecida)
-*/
-#rodape {
-  background-color: green;
-}
-
-h2 {
-  color: green;
-}
-
-/* Interpolação */
-.red {
-  color: red;
-}
-
-/* for, while, each, funções e importações */
 /* for */
 /* through e to */
+/* Variáveis */
 .item-1 {
-  background: green;
+  background: blue;
   margin-bottom: 2px;
 }
 
 .item-2 {
-  background: green;
+  background: blue;
   margin-bottom: 2px;
 }
 
 .item-3 {
-  background: green;
+  background: blue;
   margin-bottom: 2px;
 }
-
-/* while */
-.item-1 {
-  background: orange;
-  margin-bottom: 2px;
-}
-
-.item-2 {
-  background: orange;
-  margin-bottom: 2px;
-}
-
-.item-3 {
-  background: orange;
-  margin-bottom: 2px;
-}
-
-.item-4 {
-  background: orange;
-  margin-bottom: 2px;
-}
-
-/* each */
-.item-1 {
-  background: green;
-  margin-bottom: 2px;
-}
-
-.item-2 {
-  background: yellow;
-  margin-bottom: 2px;
-}
-
-.item-3 {
-  background: red;
-  margin-bottom: 2px;
-}
-
-/* Funções */
-/*
-100%
-*/
 
 /*# sourceMappingURL=estilo.css.map */
