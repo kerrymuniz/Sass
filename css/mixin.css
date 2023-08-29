@@ -60,4 +60,75 @@ p {
   padding: 10px;
 }
 
+/* each */
+.item-1 {
+  background: green;
+  padding: 10px;
+  margin: 5px;
+}
+
+.item-2 {
+  background: gray;
+  padding: 10px;
+  margin: 5px;
+}
+
+.item-3 {
+  background: red;
+  padding: 10px;
+  margin: 5px;
+}
+
+/* for */
+.item-4 {
+  background: blue;
+  padding: 10px;
+  margin: 5px;
+}
+
+.item-5 {
+  background: blue;
+  padding: 10px;
+  margin: 5px;
+}
+
+.item-6 {
+  background: blue;
+  padding: 10px;
+  margin: 5px;
+}
+
+/* while */
+.item-7 {
+  background: orange;
+  padding: 10px;
+  margin: 5px;
+  width: 300px;
+}
+
+.item-8 {
+  background: orange;
+  padding: 10px;
+  margin: 5px;
+  width: 300px;
+}
+
+.item-9 {
+  background: orange;
+  padding: 10px;
+  margin: 5px;
+  width: 300px;
+}
+
+/* funções */
+/*
+outras funções:
+*/
+.alerta {
+  /* mistura as cores + % */
+  /* deixa as cores mais escuras + % */
+  /* deixa as cores mais claras + % */
+  background: #8080ff;
+}
+
 /*# sourceMappingURL=mixin.css.map */

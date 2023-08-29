@@ -101,3 +101,72 @@ $cor: red;
 p{
     @include tema(blackfriday);
 }
+
+
+//PRATICAR SASS
+
+    /* each */
+    $lista: green, gray, red;
+    $contador: 1;
+
+    @each $cor in $lista {
+        .item-#{$contador} {
+            background: $cor;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        $contador: $contador + 1;
+    }
+
+
+    /* for */
+    @for $tag from 4 through 6 {
+        .item-#{$tag} {
+            background: blue;
+            padding: 10px;
+            margin: 5px;
+        }
+    }
+
+    /* while */
+    $cor: orange;
+    $contador: 7;
+    @while ($contador < 10){
+        .item-#{$contador} {
+            background: $cor;
+            padding: 10px;
+            margin: 5px;
+            width: 300px;
+        }
+
+        $contador: $contador + 1;
+    }
+
+
+    /* funções */
+    $total: 12;
+    @function largura-coluna($coluna){
+
+        //retornará o resultado em porcentagem;
+        @return percentage($coluna/$total);
+
+    }
+
+    $resultado: largura-coluna(12);
+    //#{$resultado};
+
+    /*
+    outras funções:
+    */
+    .alerta {
+        /* mistura as cores + % */
+        //background: mix(green, yellow, 40%);
+
+        /* deixa as cores mais escuras + % */
+        //background: darken(yellow, 30%);
+
+        /* deixa as cores mais claras + % */
+        background: lighten(blue, 25%);
+
+    }
