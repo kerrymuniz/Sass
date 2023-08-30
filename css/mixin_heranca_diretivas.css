@@ -13,20 +13,20 @@ h2 {
 }
 
 /* Múltiplas diretivas */
-.classe1, .vermelho {
+.classe1, .class-principal, .vermelho {
   color: red;
 }
 
-.classe2, .vermelho {
+.classe2, .class-principal, .vermelho {
   background: black;
 }
 
 /* Encadeamento de diretivas */
-.pai, .filho, .erro {
+.pai, .filho, .classe-principal2, .erro {
   color: red;
 }
 
-.filho, .erro {
+.filho, .classe-principal2, .erro {
   background: black;
 }
 
@@ -60,6 +60,7 @@ p {
   padding: 10px;
 }
 
+/**********************************************************/
 /* each */
 .item-1 {
   background: green;
@@ -121,9 +122,7 @@ p {
 }
 
 /* funções */
-/*
-outras funções:
-*/
+/* outras funções: */
 .alerta {
   /* mistura as cores + % */
   /* deixa as cores mais escuras + % */
@@ -131,4 +130,35 @@ outras funções:
   background: #8080ff;
 }
 
-/*# sourceMappingURL=mixin.css.map */
+/* Mixin */
+.mixin {
+  color: white;
+  background: blue;
+  padding: 15px;
+  margin: 10px;
+}
+
+/* Herança Múltiplas diretivas */
+.classe1, .class-principal, .vermelho {
+  color: white;
+  background: green;
+}
+
+.classe2, .class-principal, .vermelho {
+  padding: 15px;
+  margin: 10px;
+}
+
+/* Encadeamento de diretivas */
+.pai, .filho, .classe-principal2, .erro {
+  color: black;
+  font-size: 2em;
+}
+
+.filho, .classe-principal2, .erro {
+  background: white;
+}
+
+/* Diretivas de controle */
+
+/*# sourceMappingURL=mixin_heranca_diretivas.css.map */

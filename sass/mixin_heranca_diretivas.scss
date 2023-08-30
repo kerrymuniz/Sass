@@ -102,6 +102,8 @@ p{
     @include tema(blackfriday);
 }
 
+/**********************************************************/
+
 
 //PRATICAR SASS
 
@@ -144,6 +146,7 @@ p{
     }
 
 
+    
     /* funções */
     $total: 12;
     @function largura-coluna($coluna){
@@ -156,9 +159,10 @@ p{
     $resultado: largura-coluna(12);
     //#{$resultado};
 
-    /*
-    outras funções:
-    */
+    
+    
+    
+    /* outras funções: */
     .alerta {
         /* mistura as cores + % */
         //background: mix(green, yellow, 40%);
@@ -168,5 +172,63 @@ p{
 
         /* deixa as cores mais claras + % */
         background: lighten(blue, 25%);
+
+    }
+
+        ///////////////////////////////
+    
+    /* Mixin */
+    @mixin paragrafo($cor, $cor-bg, $padd, $marg){
+            color: $cor;
+            background: $cor-bg;
+            padding: $padd;
+            margin: $marg;
+    }
+
+    .mixin{
+        @include paragrafo(white, blue, 15px, 10px);
+    }
+
+
+    /* Herança Múltiplas diretivas */
+    .classe1{
+        color: white;
+        background: green;
+    }
+
+    .classe2{
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .class-principal{
+        @extend.classe1;
+        @extend.classe2;
+    }
+
+
+    /* Encadeamento de diretivas */
+    .pai{
+        color: black;
+        font-size: 2em;
+    }
+
+    .filho{
+        @extend.pai;
+        background: white;
+    }
+
+    .classe-principal2{
+        @extend.filho;
+    }
+
+    /* Diretivas de controle */
+    $cor: orange;
+    $bg: green;
+    @if($cor == red && $bg == green){
+        
+    }@else if(){
+
+    }@else{
 
     }
