@@ -160,5 +160,16 @@ p {
 }
 
 /* Diretivas de controle */
+.dc {
+  color: orange;
+  background: green;
+}
+
+/* Diretivas de controle e mixins */
+.mixin2 {
+  color: white;
+  background: blue;
+  font-size: 1em;
+}
 
 /*# sourceMappingURL=mixin_heranca_diretivas.css.map */

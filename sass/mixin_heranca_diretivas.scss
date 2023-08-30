@@ -222,4 +222,43 @@ p{
         @extend.filho;
     }
 
+    
     /* Diretivas de controle */
+    $cor: orange;
+    @if($cor == red){
+        .dc{
+            color: $cor;
+            background: green;
+            font-size: 1.5em;
+        }
+    }@else if($cor == blue){
+        .dc{
+            color: $cor;
+            background: black;
+            padding: 10px;
+        }
+    }@else{
+        .dc{
+            color: orange;
+            background: green;
+        }
+    }
+
+
+    /* Diretivas de controle e mixins */
+    @mixin mensagem($mensagem: viagem){
+        @if($mensagem == passeio){
+            color: blue;
+        }@else if($mensagem == volta){
+            color: blue;
+            background: black;
+        }@else{
+            color: white;
+            background: blue;
+            font-size: 1em;
+        }
+    }
+
+    .mixin2{
+        @include mensagem(viagem);
+    }
